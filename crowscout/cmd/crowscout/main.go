@@ -57,7 +57,12 @@ func main() {
 	aliveDomains, err := runner.RunHttpx(domains)
 	if err != nil {
 		log.Printf("[-] Httpx failed: %v", err)
-		aliveDomains = domains // Fallback
+		// Fallback
+		for _, d := range domains {
+			aliveDomains = append(aliveDomains, runner.HttpResult{
+				URL: d,
+			})
+		}
 	}
 	fmt.Printf("[+] Found %d alive subdomains out of %d\n", len(aliveDomains), len(domains))
 
