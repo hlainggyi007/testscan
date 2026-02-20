@@ -1,0 +1,15 @@
+{
+    "critical_ports": {
+        "21": "FTP (File Transfer)",
+        "22": "SSH (Remote Access)",
+        "23": "Telnet (Insecure Remote)",
+        "3389": "RDP (Windows Remote)",
+        "8080": "Alt HTTP (Often Tomcat/Jenkins)",
+        "9200": "Elasticsearch (Data Leak?)"
+    },
+    "nuclei_severities": [
+        "critical",
+        "high",
+        "medium"
+    ]
+}
